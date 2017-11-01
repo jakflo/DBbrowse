@@ -1,0 +1,25 @@
+{block content}
+{if $stat == "name_missing"}
+    <h1>Chybí číslo zaměstnance!</h1>
+{/if}
+{if $stat == "not_found"}
+    <h1>Zaměstnanec {$name} nenalezen</h1>
+{/if}
+{if $stat == "OK"}
+    <h1>Plat zaměstnance {$name}</h1>
+    <table class="norm_tab salary_mod">
+        <tr>
+            <th>Rok</th><th>Roční plat</th><th>Funkce</th>
+        </tr>
+        {foreach $rows as $row}
+            <tr>
+                <td>{$row->rok}</td>
+                <td>{$row->plat}</td>
+                <td>{$row->title}</td>
+            </tr>
+        {/foreach}
+    </table>
+{/if}
+<br />
+<a href="/"><button>Zpět</button></a>
+{/block}

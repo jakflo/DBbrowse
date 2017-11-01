@@ -1,0 +1,66 @@
+body {
+	font-size: 15px;
+	line-height: 1.6;
+	color: #333;
+	background: white;
+}
+
+h1 {
+	color: #3484D2;
+}
+
+#ajax-spinner {
+	margin: 15px 0 0 15px;
+	padding: 13px;
+	background: white url('../images/spinner.gif') no-repeat 50% 50%;
+	font-size: 0;
+	z-index: 123456;
+	display: none;
+}
+
+div.flash {
+	color: black;
+	background: #FFF9D7;
+	border: 1px solid #E2C822;
+	padding: 1em;
+	margin: 1em 0;
+}
+
+a[href^="#error:"] {
+	background: red;
+	color: white;
+}
+
+form th, form td {
+	vertical-align: top;
+	font-weight: normal;
+}
+
+form th {
+	text-align: right;
+}
+
+form .required label {
+	font-weight: bold;
+}
+
+form .error {
+	color: #D00;
+	font-weight: bold;
+}
+
+table.norm_tab,table.norm_tab th,table.norm_tab td {border: 1px solid black;
+                                                    border-collapse: collapse;
+                                                    padding: 2px 10px;
+                                                    text-align: center;}
+table.norm_tab th {padding: 5px 10px;
+                background-color: #80bfff;}
+table.norm_tab td {cursor: pointer;}
+table.norm_tab tr:hover {background-color: #cccccc;}
+table.norm_tab tr.marked {background-color: #99ff99}
+
+a {text-decoration: none;}
+a:hover {color:red;}
+
+table.salary_mod td {cursor: default;}
+table.salary_mod tr:hover {background-color:#bfbfbf}

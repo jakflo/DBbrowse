@@ -1,0 +1,43 @@
+{block content}
+<h1>Seznam zaměstnanců</h1>
+<table id="empee_tab" class="norm_tab">
+    <tr>
+        <th>Osobní číslo</th><th>Jméno</th><th>Příjmení</th><th>Pohlaví</th><th>Funkce</th><th>Pracuje let</th>
+    </tr>
+    {foreach $rows as $row}
+        <tr>
+            <td>{$row->emp_no}</td>
+            <td>{$row->first_name}</td>
+            <td>{$row->last_name}</td>
+            <td>{$row->gender}</td>
+            <td>{$row->title}</td>
+            <td>{$row->yrs_wrk}</td>
+        </tr>
+    {/foreach}
+</table>
+<br />
+<form n:name=formPage class="form">
+    <input n:name="page" value={$curr_page} style="text-align:right;" /> z {$pages}
+    <input n:name="subm" class="btn btn-default" />
+    <button onclick="turn_page('prev')">&lt;</button>
+    <button onclick="turn_page('next')">&gt;</button>
+    <button onclick="show_sals()" id="sals_btn" disabled>Ukázat plat</button>
+</form>
+<div id='items_per_page_select'>
+    {foreach $items_p_page_list as $ipp}
+        {if $ipp == $curr_items_p_page}
+            <b>{$ipp}</b>
+        {else}
+            <a href='/dbt?do=changePerPage&newPP={$ipp}' id="lnk">{$ipp}</a>
+        {/if}
+    {/foreach}
+</div>
+<a href="" id="sally" style="visibility: hidden;">sally</a>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    var curr_page = {$curr_page};
+    var pages = {$pages};
+    var empno_selected;
+</script>
+<script src="/js/main_template.js"></script>
+{/block}
